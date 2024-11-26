@@ -1,0 +1,302 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_x67lh"]
+
+[resource]
+script = ExtResource("1_x67lh")
+using_states = PackedStringArray()
+titles = {
+"start": "2"
+}
+character_names = PackedStringArray("Orion")
+first_title = "2"
+lines = {
+"1": {
+"id": "1",
+"next_id": "2",
+"text": "start",
+"type": &"title"
+},
+"10": {
+"character": "Orion",
+"character_replacements": Array[Dictionary]([]),
+"id": "10",
+"next_id": "11",
+"notes": "",
+"parent_id": "9",
+"tags": PackedStringArray(),
+"text": "Ew...",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Ew...",
+"type": &"dialogue"
+},
+"11": {
+"id": "11",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "NpcGlobal"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "orionTalking"
+}, {
+"type": "assignment",
+"value": "="
+}, {
+"type": "variable",
+"value": "false"
+}]),
+"is_blocking": true
+},
+"next_id": "12",
+"parent_id": "9",
+"type": &"mutation"
+},
+"12": {
+"id": "12",
+"is_snippet": false,
+"next_id": "end",
+"parent_id": "9",
+"type": &"goto"
+},
+"13": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "13",
+"next_id": "14",
+"next_id_after": "16",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Tell her you solved a puzzle",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Tell her you solved a puzzle",
+"type": &"response"
+},
+"14": {
+"id": "14",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "GlobalState"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "puzzle_status"
+}, {
+"type": "assignment",
+"value": "="
+}, {
+"type": "string",
+"value": "solved"
+}]),
+"is_blocking": true
+},
+"next_id": "16",
+"parent_id": "13",
+"type": &"mutation"
+},
+"16": {
+"condition": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "GlobalState"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "puzzle_status"
+}, {
+"type": "comparison",
+"value": "=="
+}, {
+"type": "string",
+"value": "solved"
+}, {
+"type": "colon"
+}])
+},
+"id": "16",
+"next_conditional_id": "18",
+"next_id": "17",
+"next_id_after": "21",
+"type": &"condition"
+},
+"17": {
+"character": "Orion",
+"character_replacements": Array[Dictionary]([]),
+"id": "17",
+"next_id": "21",
+"notes": "",
+"parent_id": "16",
+"tags": PackedStringArray(),
+"text": "Oh you solved that bullshit, good for you",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Oh you solved that bullshit, good for you",
+"type": &"dialogue"
+},
+"18": {
+"id": "18",
+"next_conditional_id": "21",
+"next_id": "19",
+"next_id_after": "21",
+"type": &"condition"
+},
+"19": {
+"character": "Orion",
+"character_replacements": Array[Dictionary]([]),
+"id": "19",
+"next_id": "21",
+"notes": "",
+"parent_id": "18",
+"tags": PackedStringArray(),
+"text": "Have you heard about the crossword? I can't solve it..",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Have you heard about the crossword? I can't solve it..",
+"type": &"dialogue"
+},
+"2": {
+"id": "2",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "NpcGlobal"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "orionTalking"
+}, {
+"type": "assignment",
+"value": "="
+}, {
+"type": "variable",
+"value": "true"
+}]),
+"is_blocking": true
+},
+"next_id": "4",
+"type": &"mutation"
+},
+"21": {
+"id": "21",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "NpcGlobal"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "orionTalking"
+}, {
+"type": "assignment",
+"value": "="
+}, {
+"type": "variable",
+"value": "false"
+}]),
+"is_blocking": true
+},
+"next_id": "22",
+"type": &"mutation"
+},
+"22": {
+"id": "22",
+"is_snippet": false,
+"next_id": "end!",
+"type": &"goto"
+},
+"4": {
+"character": "Orion",
+"character_replacements": Array[Dictionary]([]),
+"id": "4",
+"next_id": "6",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "What do you want asshole?",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "What do you want asshole?",
+"type": &"dialogue"
+},
+"6": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "6",
+"next_id": "7",
+"next_id_after": "16",
+"notes": "",
+"responses": PackedStringArray("6", "13"),
+"tags": PackedStringArray(),
+"text": "Smack her ass",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Smack her ass",
+"type": &"response"
+},
+"7": {
+"character": "Orion",
+"character_replacements": Array[Dictionary]([]),
+"id": "7",
+"next_id": "8",
+"notes": "",
+"parent_id": "6",
+"tags": PackedStringArray(),
+"text": "What the fuck man?",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "What the fuck man?",
+"type": &"dialogue"
+},
+"8": {
+"character": "Orion",
+"character_replacements": Array[Dictionary]([]),
+"id": "8",
+"next_id": "9",
+"notes": "",
+"parent_id": "6",
+"tags": PackedStringArray(),
+"text": "Why did you smack it?",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Why did you smack it?",
+"type": &"dialogue"
+},
+"9": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "9",
+"next_id": "10",
+"next_id_after": "16",
+"notes": "",
+"parent_id": "6",
+"responses": PackedStringArray("9"),
+"tags": PackedStringArray(),
+"text": "\"Looked juicy\"",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "\"Looked juicy\"",
+"type": &"response"
+}
+}
+raw_text = "~ start
+set NpcGlobal.orionTalking = true
+
+Orion: What do you want asshole?
+
+- Smack her ass
+	Orion: What the fuck man?
+	Orion: Why did you smack it?
+	- \"Looked juicy\"
+		Orion: Ew...
+		set NpcGlobal.orionTalking = false
+		=> END
+- Tell her you solved a puzzle
+	set GlobalState.puzzle_status = \"solved\"
+
+if GlobalState.puzzle_status == \"solved\":
+	Orion: Oh you solved that bullshit, good for you
+else:
+	Orion: Have you heard about the crossword? I can't solve it..
+
+set NpcGlobal.orionTalking = false
+=> END!"
+metadata/dialogue_manager_version = "2.44.0"
